@@ -11,13 +11,13 @@ export default function Home() {
   
   // Animation variants
   const slideInFromLeft = {
-    hidden: { x: -100, opacity: 0 },
-    visible: { x: 0, opacity: 1 },
+    hidden: { x: -100, opacity: 0, scale: 0.9 },
+    visible: { x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
   };
 
   const slideInFromRight = {
-    hidden: { x: 100, opacity: 0 },
-    visible: { x: 0, opacity: 1 },
+    hidden: { x: 100, opacity: 0, scale: 0.9 },
+    visible: { x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
   };
 
   const staggeredSlideIn = {
@@ -25,7 +25,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.3,
       },
     },
   };
@@ -56,7 +56,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               variants={slideInFromLeft}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
               className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
             >
               4 Peak Digital Agency
@@ -66,7 +66,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               variants={slideInFromRight}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl"
             >
               4Peak olarak, dijital dünyada markanızı bir adım öne çıkaracak çözümler sunuyoruz.
@@ -76,7 +76,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               variants={slideInFromRight}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-10 flex items-center justify-center gap-x-6"
             >
               <a
@@ -91,14 +91,14 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        
+
         {/* Logo Slider with Animation */}
         <section>
           <motion.div
             initial="hidden"
             whileInView="visible"
             variants={slideInFromLeft}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
             <LogoSlider />
           </motion.div>
