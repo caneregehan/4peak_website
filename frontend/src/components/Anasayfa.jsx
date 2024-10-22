@@ -8,16 +8,16 @@ export default function Home() {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const buttonRef = useRef(null);
-  
+
   // Animation variants
   const slideInFromLeft = {
     hidden: { x: -100, opacity: 0, scale: 0.9 },
-    visible: { x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
+    visible: { x: 0, opacity: 1, scale: 1, transition: { type: "fade", stiffness: 400 } },
   };
 
   const slideInFromRight = {
     hidden: { x: 100, opacity: 0, scale: 0.9 },
-    visible: { x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
+    visible: { x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 400 } },
   };
 
   const staggeredSlideIn = {
@@ -25,7 +25,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.8,
       },
     },
   };
@@ -56,7 +56,7 @@ export default function Home() {
               initial="hidden"
               whileInView="visible"
               variants={slideInFromLeft}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.9 }}
               className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
             >
               4 Peak Digital Agency
@@ -95,10 +95,10 @@ export default function Home() {
         {/* Logo Slider with Animation */}
         <section>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={slideInFromLeft}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="py-10"
           >
             <LogoSlider />
           </motion.div>
@@ -191,8 +191,18 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <h1 className="text-center text-2xl font-bold m-11">Google Maps Haritası</h1>
-        <Maps />
+        <motion.section
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 0.9 }}
+          className="py-10"
+        >
+          <h1 className="text-center text-2xl font-bold m-11">
+            Google Maps Haritası
+          </h1>
+          <Maps />
+        </motion.section>
+
       </div>
     </div>
   );
