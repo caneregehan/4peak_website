@@ -204,10 +204,7 @@ export default function Home() {
                 variants={index % 2 === 0 ? slideInFromLeft : slideInFromRight}
                 className="relative w-32 h-32 mx-auto overflow-hidden bg-transparent rounded-full">
                 <div className="absolute inset-0">
-                  <a
-                    href="https://www.instagram.com/4peakdigital/"
-                    target="_blank"
-                    className="block">
+                  <a href={brand.social} target="_blank" className="block">
                     <img
                       className="absolute inset-0 object-contain w-full h-full transition duration-500 opacity-100"
                       src={brand.logo}
