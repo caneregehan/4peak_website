@@ -1,23 +1,42 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import LogoSlider from "./LogoSlider";
 import Maps from "./Maps";
+import Footer from "./Footer";
 
 export default function Home() {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const buttonRef = useRef(null);
+  const [brands, setBrands] = useState([]);
+
+  useEffect(() => {
+    fetch("./src/Brands/brands.json") // JSON dosyasının yolu
+      .then((response) => response.json())
+      .then((data) => setBrands(data))
+      .catch((error) => console.error("Error fetching brands:", error));
+  }, []);
 
   // Animation variants
   const slideInFromLeft = {
     hidden: { x: -100, opacity: 0, scale: 0.9 },
-    visible: { x: 0, opacity: 1, scale: 1, transition: { type: "fade", stiffness: 400 } },
+    visible: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: { type: "fade", stiffness: 400 },
+    },
   };
 
   const slideInFromRight = {
     hidden: { x: 100, opacity: 0, scale: 0.9 },
-    visible: { x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 400 } },
+    visible: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: { type: "spring", stiffness: 400 },
+    },
   };
 
   const staggeredSlideIn = {
@@ -31,19 +50,22 @@ export default function Home() {
   };
 
   return (
-    <div className="section bg-white">
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div aria-hidden="true" className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+    <div className="bg-white section">
+      <div className="relative px-6 isolate pt-14 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 overflow-hidden -top-40 -z-10 transform-gpu blur-3xl sm:-top-80">
           <div
             style={{
-              clipPath: "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              clipPath:
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
             }}
             className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#035882] to-[#2dad63] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="max-w-2xl py-32 mx-auto sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+            <div className="relative px-3 py-1 text-sm leading-6 text-gray-600 rounded-full ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Creativity, Change, Grow.
               <a href="#" className="font-semibold text-indigo-600">
                 <span aria-hidden="true" className="absolute inset-0" />
@@ -57,8 +79,7 @@ export default function Home() {
               whileInView="visible"
               variants={slideInFromLeft}
               transition={{ duration: 0.9 }}
-              className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl"
-            >
+              className="text-5xl font-semibold tracking-tight text-gray-900 text-balance sm:text-7xl">
               4 Peak Digital Agency
             </motion.h1>
             <motion.p
@@ -67,9 +88,9 @@ export default function Home() {
               whileInView="visible"
               variants={slideInFromRight}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl"
-            >
-              4Peak olarak, dijital dünyada markanızı bir adım öne çıkaracak çözümler sunuyoruz.
+              className="mt-8 text-lg font-medium text-gray-500 text-pretty sm:text-xl">
+              4Peak olarak, dijital dünyada markanızı bir adım öne çıkaracak
+              çözümler sunuyoruz.
             </motion.p>
             <motion.div
               ref={buttonRef}
@@ -77,15 +98,15 @@ export default function Home() {
               whileInView="visible"
               variants={slideInFromRight}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-10 flex items-center justify-center gap-x-6"
-            >
+              className="flex items-center justify-center mt-10 gap-x-6">
               <a
                 href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
+                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 Başlarken
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              <a
+                href="#"
+                className="text-sm font-semibold leading-6 text-gray-900">
                 Hakkımızda <span aria-hidden="true">→</span>
               </a>
             </motion.div>
@@ -98,8 +119,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="py-10"
-          >
+            className="py-10">
             <LogoSlider />
           </motion.div>
         </section>
@@ -111,7 +131,8 @@ export default function Home() {
                 How does it work?
               </h2>
               <p className="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis.
               </p>
             </div>
 
@@ -129,18 +150,30 @@ export default function Home() {
                 whileInView="visible"
                 variants={staggeredSlideIn}
                 transition={{ duration: 0.5 }}
-                className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12"
-              >
+                className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
                 {[1, 2, 3].map((step) => (
-                  <motion.div key={step} variants={step % 2 === 0 ? slideInFromLeft : slideInFromRight}>
+                  <motion.div
+                    key={step}
+                    variants={
+                      step % 2 === 0 ? slideInFromLeft : slideInFromRight
+                    }>
                     <div className="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
-                      <span className="text-xl font-semibold text-gray-700"> {step} </span>
+                      <span className="text-xl font-semibold text-gray-700">
+                        {" "}
+                        {step}{" "}
+                      </span>
                     </div>
                     <h3 className="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">
-                      {step === 1 ? "Create a free account" : step === 2 ? "Build your website" : "Release & Launch"}
+                      {step === 1
+                        ? "Create a free account"
+                        : step === 2
+                        ? "Build your website"
+                        : "Release & Launch"}
                     </h3>
                     <p className="mt-4 text-base text-gray-600">
-                      Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                      Amet minim mollit non deserunt ullamco est sit aliqua
+                      dolor do amet sint. Velit officia consequat duis enim
+                      velit mollit.
                     </p>
                   </motion.div>
                 ))}
@@ -151,40 +184,36 @@ export default function Home() {
 
         {/* Brand Cards Section */}
         <section>
-          <div className="text-center py-10">
-            <p className="text-4xl font-bold text-teal-700 uppercase tracking-wide">Çalıştığımız Markalar</p>
-            <div className="mt-4 w-24 mx-auto h-1 bg-green-600"></div>
+          <div className="text-center">
+            <p className="text-4xl font-bold tracking-wide text-teal-700 uppercase">
+              Çalıştığımız Markalar
+            </p>
+            <div className="w-24 h-1 mx-auto mt-4 bg-green-500"></div>
           </div>
           <motion.div
             initial="hidden"
             whileInView="visible"
             variants={staggeredSlideIn}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            {[1, 2, 3, 4].map((index) => (
-              <motion.div key={index} variants={index % 2 === 0 ? slideInFromLeft : slideInFromRight} className="relative rounded-lg overflow-hidden shadow-lg max-w-xl bg-gray-800">
-                <img
-                  className="absolute inset-0 w-full h-full object-cover opacity-70"
-                  src="/4PEAK_SİYAH.png"
-                  alt="4Peak Black Logo Background"
-                />
-                <div className="relative p-8 text-white">
-                  <h1 className="text-3xl font-bold mb-4">Marka {index} Başlık</h1>
-                  <p className="mb-6">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut doloremque sed soluta placeat labore veniam provident quidem iusto minus veritatis!
-                  </p>
-                  <div className="flex items-center">
+            className="grid grid-cols-2 mx-auto overflow-hidden md:grid-cols-3 lg:grid-cols-4">
+            {brands.map((brand, index) => (
+              <motion.div
+                key={brand.id}
+                whileHover={{ rotateY: 180 }} // Hover durumunda döndür
+                transition={{ duration: 0.6 }} // Dönüş süresi
+                variants={index % 2 === 0 ? slideInFromLeft : slideInFromRight}
+                className="relative w-32 h-32 mx-auto overflow-hidden bg-transparent rounded-full">
+                <div className="absolute inset-0">
+                  <a
+                    href="https://www.instagram.com/4peakdigital/"
+                    target="_blank"
+                    className="block">
                     <img
-                      className="w-10 h-10 rounded-full mr-4"
-                      src={`/profile${index}.png`}
-                      alt="Profile Picture"
+                      className="absolute inset-0 object-contain w-full h-full transition duration-500 opacity-100"
+                      src={brand.logo}
+                      alt={`${brand.title} Logo Background`}
                     />
-                    <div>
-                      <p className="font-bold">Lorem, ipsum.</p>
-                      <p className="text-sm text-gray-300">Creative Director</p>
-                    </div>
-                  </div>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -195,15 +224,14 @@ export default function Home() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.9 }}
-          className="py-10"
-        >
-          <h1 className="text-center text-2xl font-bold m-11">
+          className="py-10">
+          <h1 className="text-2xl font-bold text-center m-11">
             Google Maps Haritası
           </h1>
           <Maps />
         </motion.section>
-
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,7 @@
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.perspective {
+  perspective: 1000px; /* Derinlik hissi için ayar */
+}
