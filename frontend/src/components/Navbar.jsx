@@ -5,8 +5,8 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Anasayfa", href: "#" },
-  { name: "Hakkımızda", href: "#" },
+  { name: "Anasayfa", href: "/" },
+  { name: "Hakkımızda", href: "/about" },
   { name: "İşlerimiz", href: "#" },
   { name: "İletişim", href: "#" },
 ];
@@ -23,7 +23,7 @@ export default function Navbar() {
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">4 PEAK</span>
             <img
-              alt=""
+              alt="4Peak Logo"
               src="./src/assets/4PEAK_SİYAH.png"
               className="w-auto h-8"
             />
