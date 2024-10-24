@@ -186,10 +186,10 @@ export default function Home() {
         {/* Brand Cards Section */}
         <section>
           <div className="text-center">
-            <p className="text-4xl font-bold tracking-wide text-teal-700 uppercase">
+            <p className="text-4xl font-bold tracking-wide text-teal-700 uppercase mb-7">
               Çalıştığımız Markalar
             </p>
-            <div className="w-24 h-1 mx-auto mt-4 bg-green-500"></div>
+            <div className="w-24 h-1 mx-auto mt-4 bg-green-500 mb-7"></div>
           </div>
           <motion.div
             initial="hidden"
@@ -223,8 +223,16 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.9 }}
           className="py-10">
-          <h1 className="text-2xl font-bold text-center m-11">
-            Google Maps Haritası
+          <h1 className="text-3xl font-bold text-center m-11">
+            <Typewriter
+              words={["Adresimiz"]}
+              loop={5}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={3000}
+            />
           </h1>
           <Maps />
         </motion.section>
