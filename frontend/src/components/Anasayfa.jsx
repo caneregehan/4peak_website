@@ -228,7 +228,6 @@ export default function Home() {
           <Maps />
         </motion.section>
       </div>
-      <Footer />
     </div>
   );
 }
