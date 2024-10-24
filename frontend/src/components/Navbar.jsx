@@ -16,9 +16,7 @@ export default function Navbar() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
-      <nav
-        aria-label="Global"
-        className="flex items-center justify-between p-6 lg:px-8">
+      <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">4 PEAK</span>
@@ -43,7 +41,7 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900">
+              className="text-sm font-semibold leading-6 text-gray-900 transition duration-200 hover:text-[#28b862] hover:scale-110">
               {item.name}
             </a>
           ))}
@@ -54,10 +52,7 @@ export default function Navbar() {
             className="text-sm font-semibold leading-6 text-gray-900"></a>
         </div>
       </nav>
-      <Dialog
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className="lg:hidden">
+      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
@@ -84,7 +79,7 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50">
+                    className="block px-3 py-2 -mx-3 text-base font-semibold leading-7 text-gray-900 rounded-lg hover:bg-gray-50 transition duration-200">
                     {item.name}
                   </a>
                 ))}
@@ -92,7 +87,7 @@ export default function Navbar() {
               <div className="py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"></a>
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition duration-200"></a>
               </div>
             </div>
           </div>
