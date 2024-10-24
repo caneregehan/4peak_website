@@ -1,11 +1,36 @@
 import Slider from "./Slider";
 
+
+const silderDataEnum = [
+  {
+    id: 1,
+    text: "Lorem Ipsum1",
+    imgSource: "./src/assets/about_pic1.jpeg"
+  },
+  {
+    id: 2,
+    text: "Lorem Ipsum2",
+    imgSource: "./src/assets/about_pic1.jpeg"
+  }
+  ,
+  {
+    id: 3,
+    text: "Lorem Ipsum3",
+    imgSource: "./src/assets/about_pic1.jpeg"
+  },
+  {
+    id: 4,
+    text: "Lorem Ipsum4",
+    imgSource: "./src/assets/about_pic1.jpeg"
+  }
+]
+
 export default function Works() {
   return (
     <>
       <section>
         <div className="mt-16">
-          <Slider />
+          <Slider sliderData={silderDataEnum} />
         </div>
         <div className="max-w-4xl px-5 mx-auto mt-16 mb-16">
           <div className="text-center">
@@ -36,7 +61,6 @@ export default function Works() {
               <div>
                 <h3 className="text-xl font-semibold">Customizable</h3>
                 <p className="mt-1 text-gray-500">
-                  {" "}
                   You don't need to be an expert to customize this plugin. Our
                   code is very readable and well documented.
                 </p>

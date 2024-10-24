@@ -153,10 +153,25 @@ export const Social = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
-  // Animation variants for sliding in from the left
-  const slideIn = {
+  // Staggered animation
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    show: { opacity: 1, x: 0, transition: { duration: 2.5 } },
+  };
+
+  const slideInRight = {
     hidden: { opacity: 0, x: -150 },
-    show: { opacity: 1, x: 0, transition: { duration: 2, ease: "easeOut" } },
+    show: { opacity: 1, x: 0, transition: { duration: 2.5 } },
   };
 
   useEffect(() => {
@@ -168,7 +183,7 @@ export const Social = () => {
       ref={ref}
       initial="hidden"
       animate={controls}
-      variants={slideIn}
+      variants={staggerContainer}
       className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -187,9 +202,13 @@ export const Social = () => {
         </p>
       </div>
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-        {/* Repeat the structure for your social media links */}
         {socialMediaData.map((data, index) => (
-          <div key={index}>
+          <motion.div
+            key={index}
+            initial="hidden"
+            animate={controls}
+            variants={index % 2 === 0 ? slideInLeft : slideInRight} // Alternate animations
+          >
             <a
               href={data.link}
               target="_blank"
@@ -208,7 +227,7 @@ export const Social = () => {
                 <p className="mb-4 text-xs tracking-wide text-gray-400"></p>
               </div>
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </motion.div>
