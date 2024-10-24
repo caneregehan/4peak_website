@@ -1,29 +1,27 @@
 import Slider from "./Slider";
 
-
 const silderDataEnum = [
   {
     id: 1,
     text: "Lorem Ipsum1",
-    imgSource: "./src/assets/about_pic1.jpeg"
+    imgSource: "./src/assets/about_pic1.jpeg",
   },
   {
     id: 2,
     text: "Lorem Ipsum2",
-    imgSource: "./src/assets/about_pic1.jpeg"
-  }
-  ,
+    imgSource: "./src/assets/about_pic1.jpeg",
+  },
   {
     id: 3,
     text: "Lorem Ipsum3",
-    imgSource: "./src/assets/about_pic1.jpeg"
+    imgSource: "./src/assets/about_pic1.jpeg",
   },
   {
     id: 4,
     text: "Lorem Ipsum4",
-    imgSource: "./src/assets/about_pic1.jpeg"
-  }
-]
+    imgSource: "./src/assets/about_pic1.jpeg",
+  },
+];
 
 export default function Works() {
   return (
@@ -34,10 +32,13 @@ export default function Works() {
         </div>
         <div className="max-w-4xl px-5 mx-auto mt-16 mb-16">
           <div className="text-center">
-            <h2 className="text-3xl font-semibold">Features you'll love</h2>
+            <h2 className="text-3xl font-semibold">
+              Lorem ipsum dolor sit amet.
+            </h2>
             <p className="max-w-md mx-auto mt-2 text-gray-500">
-              A responsive documentation template built for everyone who wants
-              to create a plugin.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              explicabo, quisquam fugiat assumenda veritatis ratione earum
+              consequuntur! Illum, accusamus repellendus!
             </p>
           </div>
 
@@ -84,12 +85,11 @@ export default function Works() {
                 </svg>
               </span>
               <div>
-                <h3 className="text-xl font-semibold">Fully Responsive</h3>
+                <h3 className="text-xl font-semibold">Lorem, ipsum.</h3>
                 <p className="mt-1 text-gray-500">
                   {" "}
-                  With mobile, tablet &amp; desktop support it doesn't matter
-                  what device you're using. This plugin is responsive in all
-                  browsers.{" "}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+                  explicabo sed facere expedita quidem veniam?
                 </p>
               </div>
             </div>
@@ -111,11 +111,11 @@ export default function Works() {
                 </svg>
               </span>
               <div>
-                <h3 className="text-xl font-semibold">Developer Support</h3>
+                <h3 className="text-xl font-semibold">Lorem, ipsum.</h3>
                 <p className="mt-1 text-gray-500">
                   {" "}
-                  Our plugins are supported by sponsors who provide community
-                  support. Sponsors will get email support on weekdays.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Veniam ducimus suscipit excepturi perferendis fugiat quam.
                 </p>
               </div>
             </div>
@@ -137,11 +137,11 @@ export default function Works() {
                 </svg>
               </span>
               <div>
-                <h3 className="text-xl font-semibold">Cross Browser</h3>
+                <h3 className="text-xl font-semibold">Lorem, ipsum.</h3>
                 <p className="mt-1 text-gray-500">
                   {" "}
-                  We make sure our plugins are working perfectly with all modern
-                  browsers available such as Chrome, Firefox, Safari.{" "}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Pariatur quos, tenetur laborum magnam laboriosam perspiciatis.
                 </p>
               </div>
             </div>
@@ -163,11 +163,12 @@ export default function Works() {
                 </svg>
               </span>
               <div>
-                <h3 className="text-xl font-semibold">Clean Code</h3>
+                <h3 className="text-xl font-semibold">Lorem, ipsum.</h3>
                 <p className="mt-1 text-gray-500">
                   {" "}
-                  We strictly follow a set of guidelines along with unit tests
-                  to make sure your implementation as easy as possible.{" "}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo ullam laboriosam pariatur quisquam deleniti.
+                  Tenetur?
                 </p>
               </div>
             </div>
@@ -189,11 +190,11 @@ export default function Works() {
                 </svg>
               </span>
               <div>
-                <h3 className="text-xl font-semibold">Well Maintained</h3>
+                <h3 className="text-xl font-semibold">Lorem, ipsum.</h3>
                 <p className="mt-1 text-gray-500">
                   {" "}
-                  This templatte is actively maintained by the core plugin team.
-                  We are working on fixing each of the issues reported.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Fugiat cum, dignissimos iusto iure consequuntur nobis?
                 </p>
               </div>
             </div>

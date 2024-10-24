@@ -25,11 +25,14 @@ export default function Slider({ sliderData }) {
           return (
             <SwiperSlide key={sliderItem.id}>
               <div className="flex items-center justify-center bg-indigo-50 rounded-2xl gap-y-7 h-fit">
-
-                <img alt="img" src={sliderItem.imgSource} className="w-fit h-52" />
+                <img
+                  alt="img"
+                  src={sliderItem.imgSource}
+                  className="w-fit h-52"
+                />
               </div>
             </SwiperSlide>
-          )
+          );
         })}
 
         <div className="swiper-pagination !bottom-2 !top-auto !w-80 right-0 mx-auto bg-gray-100" />
