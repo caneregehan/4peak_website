@@ -16,10 +16,6 @@ export default function Slider({ sliderData }) {
           delay: 1200,
           disableOnInteraction: false,
         }}
-        pagination={{
-          el: ".swiper-pagination",
-          type: "progressbar",
-        }}
         className="relative progress-slide-carousel swiper-container">
         {sliderData?.map((sliderItem) => {
           return (

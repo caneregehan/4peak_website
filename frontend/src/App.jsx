@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Hakkımızda from "./components/Hakkımızda"; // Example component
 import Footer from "./components/Footer";
 import Works from "./components/Works";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Anasayfa />} />
         <Route path="/about" element={<Hakkımızda />} />
         <Route path="/works" element={<Works />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

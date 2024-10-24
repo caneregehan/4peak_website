@@ -4,22 +4,22 @@ const silderDataEnum = [
   {
     id: 1,
     text: "Lorem Ipsum1",
-    imgSource: "./src/assets/about_pic1.jpeg",
+    imgSource: "./src/assets/4PEAK_SİYAH.png",
   },
   {
     id: 2,
     text: "Lorem Ipsum2",
-    imgSource: "./src/assets/about_pic1.jpeg",
+    imgSource: "./src/assets/4PEAK_SİYAH.png",
   },
   {
     id: 3,
     text: "Lorem Ipsum3",
-    imgSource: "./src/assets/about_pic1.jpeg",
+    imgSource: "./src/assets/4PEAK_SİYAH.png",
   },
   {
     id: 4,
     text: "Lorem Ipsum4",
-    imgSource: "./src/assets/about_pic1.jpeg",
+    imgSource: "./src/assets/brandlogos/ANTEPHAN_LOGO.png",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function Works() {
   return (
     <>
       <section>
-        <div className="mt-16">
+        <div className="mt-16 ">
           <Slider sliderData={silderDataEnum} />
         </div>
         <div className="max-w-4xl px-5 mx-auto mt-16 mb-16">

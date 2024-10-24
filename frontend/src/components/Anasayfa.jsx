@@ -3,10 +3,9 @@ import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import LogoSlider from "./LogoSlider";
 import Maps from "./Maps";
-import Footer from "./Footer";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Home() {
-  const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const buttonRef = useRef(null);
   const [brands, setBrands] = useState([]);
@@ -73,15 +72,17 @@ export default function Home() {
             </div>
           </div>
           <div className="text-center">
-            <motion.h1
-              ref={titleRef}
-              initial="hidden"
-              whileInView="visible"
-              variants={slideInFromLeft}
-              transition={{ duration: 0.9 }}
-              className="text-5xl font-semibold tracking-tight text-gray-900 text-balance sm:text-7xl">
-              4 Peak Digital Agency
-            </motion.h1>
+            <h1 className="text-5xl font-semibold tracking-tight text-gray-900 text-balance sm:text-7xl">
+              <Typewriter
+                words={["4 Peak Digital"]}
+                loop={5}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={3000}
+              />
+            </h1>
             <motion.p
               ref={subtitleRef}
               initial="hidden"

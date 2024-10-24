@@ -1,42 +1,61 @@
 [
   {
     "id": 1,
-    "logo": "https://i.ibb.co/YBhyTP8/4-PEAK-S-YAH.png",
+    "logo": "./src/assets/brandlogos/ANTEPHAN_LOGO.png",
     "social": "https://www.instagram.com/4peakdigital/"
   },
   {
     "id": 2,
-    "logo": "https://i.ibb.co/YBhyTP8/4-PEAK-S-YAH.png",
+    "logo": "./src/assets/brandlogos/EGONO_LOGO.png",
     "social": "https://www.instagram.com/4peakdigital/"
   },
   {
     "id": 3,
-    "logo": "https://i.ibb.co/YBhyTP8/4-PEAK-S-YAH.png",
+    "logo": "./src/assets/brandlogos/GLAMOUR_LOGO_GOLD.png",
     "social": "https://www.instagram.com/4peakdigital/"
   },
   {
     "id": 4,
-    "logo": "https://i.ibb.co/YBhyTP8/4-PEAK-S-YAH.png",
+    "logo": "./src/assets/brandlogos/HASEKI_YENI_LOGO.png",
+
     "social": "https://www.instagram.com/4peakdigital/"
   },
   {
     "id": 5,
-    "logo": "https://i.ibb.co/YBhyTP8/4-PEAK-S-YAH.png",
+    "logo": "./src/assets/brandlogos/HUNKAR_LOGO_PNG.png",
+
     "social": "https://www.instagram.com/4peakdigital/"
   },
   {
     "id": 6,
-    "logo": "https://i.ibb.co/YBhyTP8/4-PEAK-S-YAH.png",
+    "logo": "./src/assets/brandlogos/İRİSTANBUL_LOGO.png",
+
     "social": "https://www.instagram.com/4peakdigital/"
   },
   {
     "id": 7,
-    "logo": "https://i.ibb.co/YBhyTP8/4-PEAK-S-YAH.png",
+    "logo": "./src/assets/brandlogos/JANTI_COFFEE_LOGO_SIYAH.png",
+
     "social": "https://www.instagram.com/4peakdigital/"
   },
   {
     "id": 8,
-    "logo": "https://i.ibb.co/YBhyTP8/4-PEAK-S-YAH.png",
+    "logo": "./src/assets/brandlogos/Kaüif_Äocuk_Akademisi_Logo-01 (2).png",
+    "social": "https://www.instagram.com/4peakdigital/"
+  },
+  {
+    "id": 8,
+    "logo": "./src/assets/brandlogos/KRAL_KOKOREC_LOGO.png",
+    "social": "https://www.instagram.com/4peakdigital/"
+  },
+  {
+    "id": 8,
+    "logo": "./src/assets/brandlogos/SEVILMIS_IZGARA_LOGO.png",
+    "social": "https://www.instagram.com/4peakdigital/"
+  },
+  {
+    "id": 8,
+    "logo": "./src/assets/brandlogos/TATLIBAK_LOGO.png",
     "social": "https://www.instagram.com/4peakdigital/"
   }
 ]
